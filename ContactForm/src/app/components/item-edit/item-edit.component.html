@@ -1,0 +1,23 @@
+<app-header></app-header>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+<br>
+<br><br>
+<form [formGroup]="itemAdd">
+
+<Button class="btn btn-primary" routerLink="/home">Home</Button><br>
+  <label>Item Name</label>
+  <input type="text" class="form1" formControlName="name">
+  <label>Item Description</label>
+  <input type="text" class="form1" formControlName="description">
+  <label>Item Type</label>
+  <input type="text" class="form1" formControlName="type" >
+  <br>
+  <br><br>
+  <button *ngIf="id==null"  type="submit" (click)="addItem()" class="form1">Submit</button>
+  <button *ngIf="id!=null"  type="submit" (click)="updateItem(itemDetails.itemId)" class="form1">Update</button>
+
+
+<br><br>
+</form>

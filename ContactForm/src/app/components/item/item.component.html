@@ -1,0 +1,32 @@
+
+<div class="modal-header">
+  <label for="header" style="font-size: 22px; color: rgb(11, 63, 54);">Item Details</label>  </div>
+  <table class="table table-bordered" style="background-color:  rgb(145, 149, 187);">
+      <thead>
+      <tr>
+          <th>ItemId:</th>
+          <td>{{itemDetails.itemId}}</td>
+      </tr>
+      </thead>
+      <thead>
+      <tr>
+          <th>Item name:</th>
+          <td>{{itemDetails.name}}</td>
+      </tr>
+      </thead>
+      <thead>
+      <tr>
+          <th>Item Description:</th>
+          <td>{{itemDetails.description}}</td>
+      </tr>
+      </thead>
+      <thead>
+      <tr>
+          <th>Item type:</th>
+          <td>{{itemDetails.type}}</td>
+      </tr>
+      </thead>
+  </table>
+
+  <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>

@@ -1,0 +1,18 @@
+
+<div class="container">
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <!-- <span class="fs-4">Item Contact Integration</span> -->
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/item']">Add Item</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/items']">View Items</a></li>
+      <li class="nav-item"><a class="nav-link" [routerLink]="['/addContact']">Add Contact</a></li>
+      <li class="nav-item"><a class="nav-link"[routerLink]="['/home']">View Contact</a></li>
+    </ul>
+    <Button class="btn btn-danger" (click)="logOut()">LogOut</Button>
+  </header>
+</div>

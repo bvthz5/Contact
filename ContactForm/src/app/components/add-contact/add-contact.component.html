@@ -1,0 +1,143 @@
+<app-header></app-header>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+<br>
+<label *ngIf="id==null;" style="font-size: 20px;">Add Contact</label>
+<label *ngIf="id!=null;" style="font-size: 20px;">Update Contact</label>
+<br>
+<br><br>
+
+  <form [formGroup]="contactGroup" >
+    <label>first Name</label>
+
+    <input type="text" class="form1" formControlName="firstName" placeholder="{{contactDetails.firstName}}">
+
+    <label>Last Name</label>
+    <input type="text" class="form1" formControlName="lastName">
+    <label>Nick Name</label>
+    <input type="text" class="form1" formControlName="nickName" >
+    <label>Address</label>
+    <input type="text" class="form1" formControlName="address">
+    <label>Date of Birth</label>
+    <input type="date" class="form1" formControlName="dob">
+    <label>City</label>
+    <input type="text" class="form1" formControlName="city">
+    <label>State</label>
+    <input type="text" class="form1" formControlName="state">
+    <label>Country</label>
+    <input type="text" class="form1" formControlName="country">
+    <label>Zip Code</label>
+    <input type="number" class="form1" formControlName="zipCode">
+    <label>Phones</label>
+    <input type="number" class="form1" formControlName="phones">
+    <label>Emails</label>
+    <input type="email" class="form1" formControlName="emails">
+    <br>
+  <button *ngIf="id==null"  type="submit" (click)="addContacts()" class="form1">Submit</button>
+  <button *ngIf="id!=null"  type="submit" (click)="updateContacts(contactDetails.contactId)" class="form1">Update</button>
+
+
+
+
+  <!-- <form [formGroup]="contactGroup" class="form" >
+
+  Firstname
+  <input class="input" type="text" formControlName="firstName" placeholder="Username" required>
+  <div *ngIf="contactGroup.controls.firstName.invalid  && contactGroup.controls.firstName.touched">
+      <div *ngIf="contactGroup.controls.firstName">
+          <p>Firstname is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.firstName.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+
+  LastName
+  <input class="input" type="text" formControlName="lastName" placeholder="Username" required>
+  <div *ngIf="contactGroup.controls.lastName.invalid  && contactGroup.controls.lastName.touched">
+      <div *ngIf="contactGroup.controls.lastName">
+          <p>LastName is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.lastName.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+  nickName
+  <input class="input" type="text" formControlName="nickName" placeholder="Username" required>
+  <div *ngIf="contactGroup.controls.nickName.invalid  && contactGroup.controls.nickName.touched">
+      <div *ngIf="contactGroup.controls.nickName">
+          <div *ngIf="contactGroup.controls.nickName">
+              <p>nickName is required.</p>
+          </div>
+          <div *ngIf="contactGroup.controls.nickName.errors?.['pattern']">
+              <p> Special charectors and numbers are not allowed.</p>
+          </div>
+      </div>
+  </div>
+  address
+  <input class="input" type="text" formControlName="address" placeholder="Username" required>
+  <div *ngIf="contactGroup.controls.address.invalid  && contactGroup.controls.address.touched">
+      <div *ngIf="contactGroup.controls.address">
+          <p>address is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.address.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+
+  city
+  <input class="input" type="text" formControlName="city" placeholder="city" required>
+  <div *ngIf="contactGroup.controls.city.invalid  && contactGroup.controls.city.touched">
+      <div *ngIf="contactGroup.controls.city">
+          <p>city is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.city.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+
+  state
+  <input class="input" type="text" formControlName="state" placeholder="state" required>
+  <div *ngIf="contactGroup.controls.state.invalid  && contactGroup.controls.state.touched">
+      <div *ngIf="contactGroup.controls.state">
+          <p>state is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.state.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+
+  country
+  <input class="input" type="text" formControlName="country" placeholder="country" required>
+  <div *ngIf="contactGroup.controls.country.invalid  && contactGroup.controls.country.touched">
+      <div *ngIf="contactGroup.controls.country">
+          <p>country is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.country.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+  zipCode
+  <input class="input" type="text" formControlName="zipCode" placeholder="zipCode" required>
+  <div *ngIf="contactGroup.controls.zipCode.invalid  && contactGroup.controls.zipCode.touched">
+      <div *ngIf="contactGroup.controls.zipCode">
+          <p>zipCode is required.</p>
+      </div>
+      <div *ngIf="contactGroup.controls.zipCode.errors?.['pattern']">
+          <p> Special charectors and numbers are not allowed.</p>
+      </div>
+  </div>
+
+  <label>Emails</label>
+  <div formArrayName="emails" *ngFor="let email of emails.controls; let i = index">
+      <input type="email" [formControlName]="i" class="form1" />
+      <button type="button" (click)="addEmail()">Add</button>
+      <button type="button" (click)="deleteEmail(i)">Delete</button>
+  </div>
+  <label>phones</label>
+  <div formArrayName="phones" *ngFor="let phone of phones.controls; let i = index">
+      <input type="text" [formControlName]="i" class="form1" />
+      <button type="button" (click)="addPhone()">Add</button>
+      <button type="button" (click)="deletePhone(i)">Delete</button>
+  </div> -->

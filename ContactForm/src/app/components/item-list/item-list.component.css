@@ -1,0 +1,84 @@
+#customers {
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#customers td, #customers th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+#but{
+    background-color: #330033;
+    margin: 15px;
+    color: white;
+    padding: 15px 20px;
+
+    font-size: 20px;
+    border-radius: 8px;
+
+
+}
+#bottom{
+	position:absolute;
+	bottom:100px;
+}
+
+tr {
+	background-color: #FFFDD0;
+}
+td{
+    font-family:"Courier New", Courier, monospace;
+    font-size:100%;
+    font-weight: bold;
+}
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: black;
+	color: white;
+}
+
+
+
+.edit {
+	cursor: pointer;
+	background-color: #330033;
+	color: whitesmoke;
+	border: 0;
+	border-radius: 10px;
+	height: 35px;
+	padding: 5px;
+	margin-right: 10px;
+	min-width: 75px;
+}
+
+.edit:hover {
+	background-color: yellow;
+	color: red;
+}
+
+.delete {
+	background-color: #330033;
+	cursor: pointer;
+	color: whitesmoke;
+	border: 0;
+	border-radius: 10px;
+	height: 35px;
+	padding: 5px;
+	margin-right: 10px;
+	min-width: 75px;
+}
+
+.delete:hover {
+	background-color: red;
+	color: white;
+}
+
+#table1 {
+	margin-top: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+}

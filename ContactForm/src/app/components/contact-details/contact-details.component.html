@@ -1,0 +1,70 @@
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+
+<div class="modal-header">
+<label for="header" style="font-size: 22px; color: black;">Contact Details</label>  </div>
+
+<table class="table tablebordered tbl" >
+    <tr>
+        <th>Contact Id:</th>
+        <td>{{contactDetails.contactId}}</td>
+    </tr>
+    <tr>
+        <th>Firstname:</th>
+        <td>{{contactDetails.firstName}}</td>
+    </tr>
+    <tr>
+        <th>Lastname:</th>
+        <td>{{contactDetails.lastName}}</td>
+    </tr>
+    <tr>
+        <th>Nickname:</th>
+        <td>{{contactDetails.nickName}}</td>
+    </tr>
+    <tr>
+        <th>Date of birth:</th>
+        <td>{{contactDetails.dob}}</td>
+    </tr>
+    <tr>
+      <th>Age:</th>
+      <td>{{contactDetails.age}}</td>
+  </tr>
+    <tr>
+        <th>Address:</th>
+        <td>{{contactDetails.address}}</td>
+    </tr>
+
+    <tr>
+        <th>City:</th>
+        <td>{{contactDetails.city}}</td>
+    </tr>
+    <tr>
+        <th>State:</th>
+        <td>{{contactDetails.state}}</td>
+    </tr>
+    <tr>
+        <th>Country:</th>
+        <td>{{contactDetails.country}}</td>
+    </tr>
+    <tr>
+        <th>Zip Code:</th>
+        <td>{{contactDetails.zipCode}}</td>
+    </tr>
+    <tr>
+        <th>Emails:</th>
+        <td>{{contactDetails.emails}}</td>
+    </tr>
+    <tr>
+        <th>Phones:</th>
+        <td>{{contactDetails.phones}}</td>
+    </tr>
+
+    
+</table>
+
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+  </div>

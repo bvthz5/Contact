@@ -1,0 +1,45 @@
+<div style="width: 500px;padding-left: 20px">
+    
+    <br>
+    <br>
+    <label style="font-size: 30px;">Register</label>
+    <br>
+    <br>
+    <form [formGroup]="registerForm" (ngSubmit)="userRegister()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid': registerForm.controls['name'].touched&& registerForm.controls['name'].errors}">
+            <div *ngIf="registerForm.controls['name'].touched">
+                <div class="error" *ngIf="registerForm.controls['name']?.errors">Enter name</div>
+            </div>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email" [ngClass]="{'is-invalid': registerForm.controls['email'].touched&& registerForm.controls['email'].errors}">
+            <div *ngIf="registerForm.controls['email'].touched">
+                <div class="error" *ngIf="registerForm.controls['email']?.errors">Enter a valid email</div>
+            </div>
+
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password"
+            [ngClass]="{'is-invalid': registerForm.controls['password'].touched&& registerForm.controls['password'].errors}">
+        <div *ngIf="registerForm.controls['password'].touched">
+            <div class="error" *ngIf="registerForm.controls['password']?.errors?.['required']">Enter
+                password</div>
+            <div class="error" *ngIf="registerForm.controls['password']?.errors?.['pattern']">password must
+                contain minimum eight
+                characters, at least one uppercase letter, one lowercase letter, one number and one
+                special character</div>
+
+        </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<br>
+<br>
+<label style="font-size: 17px;margin-left: 20px;">Already Have an Account</label> <button class="btn  "routerLink="/login">Login</button>

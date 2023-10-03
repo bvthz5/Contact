@@ -1,0 +1,58 @@
+<app-header></app-header>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+</head>
+
+
+
+<br>
+
+<!-- <Button class="btn btn-primary" routerLink="/item">Add Item</Button>&nbsp;
+<Button class="btn btn-primary" routerLink="/items">View Item</Button>&nbsp;
+<Button class="btn btn-primary" routerLink="/addContact">Add Contact</Button> -->
+<br><br>
+<table class=" table-bordered">
+    <tr>
+        <th>Contact Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Dob</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>ZipCode</th>
+
+
+
+
+
+        <th>Action</th>
+        <th></th>
+        <th></th>
+
+
+    </tr>
+    <tr *ngFor="let val of contactData">
+        <td>{{val.contactId}}</td>
+        <td>{{val.firstName}}</td>
+        <td>{{val.lastName}}</td>
+        <td>{{val.dob}}</td>
+        <td>{{val.address}}</td>
+        <td>{{val.city}}</td>
+        <td>{{val.state}}}}</td>
+        <td>{{val.country}}</td>
+        <td>{{val.zipCode}}</td>
+
+
+
+
+
+        
+        <td><button type="button" class="btn btn-success" (click)="openModal(val.contactId)">View</button></td>
+        <td><Button class="btn btn-primary" routerLink="/addContact/{{val.contactId}}">Edit</Button></td>
+        <td><Button class="btn btn-danger" (click)="onDelete(val.contactId)">Delete</Button></td>
+
+    </tr>
+</table>
+

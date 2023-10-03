@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div id="table1">
+  <Button class="btn btn-primary" routerLink="/home">Home</Button>&nbsp;
+  <table id="customers">
+      <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Email</th>
+          <th>Actions</th>
+      </tr>
+      <tr *ngFor=" let i of item">
+          <td>{{i.itemId}}</td>
+          <td>{{i.name}}</td>
+          <td>{{i.description}}</td>
+          <td>{{i.type}}</td>
+          <td><button type="button" class="btn btn-success" (click)="openModal(i.itemId)">View</button>&nbsp;
+          <Button class="btn btn-primary" routerLink="/item/{{i.itemId}}">Edit</Button>&nbsp;
+          <Button class="btn btn-danger" (click)="deleteItem(i.itemId)">Delete</Button></td>
+      </tr>
+  </table>
+</div>
